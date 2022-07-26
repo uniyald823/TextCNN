@@ -69,7 +69,7 @@ Lastly, the fully connected layers and the output activation function will give 
 ##### The Code:
 **Dataset Used.**
 The dataset used to test the models is Movie Review Dataset. (MR Dataset). In this dataset, the phrases are given and their corresponding sentiments.
-<center><img src='data.png'></center>
+<center><img src='data.PNG'></center>
 **Yoon Kim code implementations and results:**
 The architecture Kim uses is:
 1. Sentences are represented as vectors of words.
