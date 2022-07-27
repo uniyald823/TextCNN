@@ -163,7 +163,7 @@ AutoKeras describes the best model architecture and we can check this by summary
 
 ##### References
 
-[1] Y. Kim, “Convolutional Neural Networks for Sentence Classification,” arXiv, arXiv:1408.5882, Sep. 2014.doi: 10.48550/arXiv.1408.5882.
+[1] Y. Kim, “Convolutional Neural Networks for Sentence Classification,” arXiv, arXiv:1408.5882, Sep. 2014.doi: 10.48550/arXiv.1408.5882.<br>
 [2] “Papers with Code - Light-Weighted CNN for Text Classification.” https://paperswithcode.com/paper/lightweighted-cnn-for-text-classification (accessed Jun. 07, 2022).
 [3] “Papers with Code - A Practitioners’ Guide to Transfer Learning for Text Classification using Convolutional Neural Networks.” https://paperswithcode.com/ paper/a-practitioners-guide-to-transfer-learning (accessed Jun. 08, 2022).
 [4] “Papers with Code - Character-level Convolutional Networks for Text Classification.”https://paperswithcode.com/paper/character-level-convolutional-networks-for (accessed Jun. 08, 2022).  
