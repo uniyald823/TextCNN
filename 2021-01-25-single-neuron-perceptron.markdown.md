@@ -11,10 +11,15 @@ author: Drishya Uniyal
 github:  amaynez/Perceptron/
 mathjax: yes
 ---
-# Contents
+## Overview
 1. Text Classification using CNN and other models
 2. NNI for TextCNN
 3. AutoKeras
+<p>Convolutional Neural Networks, a deep learning algorithm, is used for various computations, especially when dealing with images. The architecture of CNN can be used in the field of "Text Classification" to specify the labels to text. Much work has been done in this area, starting when Yoon Kim proposed a series of experiments with convolutional neural networks trained on top of pre-trained word vectors for sentence-level classification tasks. A simple CNN with little hyperparameter tuning and static vectors achieves excellent results on multiple benchmarks. Experiments were done on different datasets with different parameters of CNN layers. Initially, base CNN was used (regular CNN). The architecture Kim shows is that sentences are represented as vectors of words; these words are converted into (300D) vectors giving us a 2D representation for each sentence. All the other researchers initially used this basic CNN structure, and then the modification was done. In another study, a model called "Lightweight CNN" is used, an architecture proposed by Ritu Yadav in her paper to solve the high memory consumption issues. The proposed network combines separable convolution, dilated convolution, and batch normalization to reduce memory consumption. Many other studies show that the model can be based on character level or word level, and accordingly, CNN behaves.</p>
+
+<p>In a study for Introduction to Neural Architecture Search for Convolutional Networks Neural Architecture, it has been defined that  Search (NAS) is a research field that utilizes optimization algorithms to design optimal neural network architectures. Neural Architecture Search (NAS) is the research field that emerged from various efforts to automate the architectural design process. NAS has been able to produce many state-of-the-art networks. A NAS procedure can be divided into several components, each of them contributing to the trajectory as well as to the result of the search. The most distinct features are the Search Space, Optimization, and Candidate Evaluation. Search space defines the networks that can examine to produce the final architecture. The optimization method dictates how to explore the search
+space. The concept of search space will be used for Neural Network Intelligence (nni), where we define various hyperparameters for our model and, accordingly, it trains to produce the best results.</p>
+
 
 ## What is Text Classification?
 
@@ -50,7 +55,7 @@ This resulting vector is called a feature vector. Each word has its category in 
 The data is prepared to fit in the model.There can be different models that can be used to fit the textual data, and in this article, Linear Regression, Naive Bayes, TextCNN, and RNN have been used to compare the models. 
 As Yoon Kim gave his paper, the main focus remains on TextCNN and its variants.
 
-##### Introduction to CNN 
+### Introduction to CNN 
 Convolutional Neural Network is just a kind of neural network that performs well in image classification and computer vision. Its convolutional layer differs from other neural networks. We will be dealing with CNN for Text Classification.
 Back in the 2014, [Yoon Kim](https://aclanthology.org/D14-1181) devised a very simple Convolutional Neural Network for Sentence Classification as a foundation for text classification and tried different variants of it to compare the performance. The main model focussed in this article will revolve around this architecture given by Yoon Kim.
 
@@ -68,7 +73,7 @@ sequence of words with zeros. Once the padding is done, we have to append zero v
 We use a predefined word embedding available from the library for better performance. If the data is not embedded, then many embeddings are available open-source, like Glove and Word2Vec.
 When we do dot product of vectors representing text, which turns zero if they belong to the same class, but if we do dot products of embedded words, we can find interrelation of words for a specific class. The kernel(filter layer) is passed over these embeddings to find convolutions, and the Max Pooling Layer of CNN dimensionally reduces these.
 Lastly, the fully connected layers and the output activation function will give values for each class.
-##### The Code:
+### The Code:
 **Dataset Used.**
 The dataset used to test the models is Movie Review Dataset. (MR Dataset). In this dataset, the phrases are given and their corresponding sentiments.
 <center><img src='data.PNG'></center>
@@ -113,7 +118,7 @@ These values may change and hence the accuracies may change accordingly.
   
  This was the basic implementation and results for Text Classification using CNN.
 
-##### NNI — An AutoML Toolkit
+### NNI — An AutoML Toolkit
 AutoML is “Automatic Machine Learning,” a toolkit that runs machine learning models and implements experiments automatically.
 In the context of the neural network, AutoML searches for different neural network architectures by taking into account the hyperparameters and training them to find the best fit model in a process called Neural Architecture Search.
 Neural Network Intelligence (NNI) is a python AutoML package that works on Linux and Windows. It trains neural network models and finds a tuple of hyper-parameters that yields an optimal model.
@@ -149,7 +154,7 @@ The best results according to the search space defined came out with the followi
 This search space can take up different values and accordingly the accuracy changes.
 As the model architecture remained same till now, this is the best accuracy obtained.
  
-##### AutoKeras
+### AutoKeras
 AutoKeras² is an open-source library that implements³ AutoML for deep learning using the Keras API. It automatically determines the best model and hyperparameters. 
 The autokeras.TextClassifier class accepts the max_trials argument to set the maximum number of different Keras Models to try. We can specify the number of trails and epochs.
 After the training process, we can use the best classifier to make predictions on the test set and evaluate performances. 
@@ -161,7 +166,10 @@ This was implemented for the MR dataset.
 
 AutoKeras describes the best model architecture and we can check this by summary().
 
-##### References
+### Conclusion
+This study's main focus remained on Text Classification and its various methods. We approached Convolutional Neural Network and defined its architecture starting from the basic models like Logistic Regression and Naive Bayes. The accuracy shows that the best model is CNN. This was further extended to nni where we define a search space instead of manually changing the parameters and getting the best accuracy. The final library was the AutoKeras which automatically determines the best model.
+
+### References
 
 [1] Y. Kim, “Convolutional Neural Networks for Sentence Classification,” arXiv, arXiv:1408.5882, Sep. 2014.doi: 10.48550/arXiv.1408.5882.<br>
 [2] “Papers with Code - Light-Weighted CNN for Text Classification.” https://paperswithcode.com/paper/lightweighted-cnn-for-text-classification (accessed Jun. 07, 2022). <br>
