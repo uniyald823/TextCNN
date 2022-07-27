@@ -89,15 +89,6 @@ Approaches for creating these word vectors:
 3. CNN-non-static: as above, but the vectors are fine-tuned (i.e., they can be changed) during training.
 4. CNN-multichannel: Two sets of word vectors are used. Fine-tuning is done.
 Convolutions are performed on these 2D representations with different window sizes (3, 4, and 5) are performed on the representations directly and then max pooled. Then the final predictions are made!
-
-The accuracies for some of the datasets are are shown (as obtained by Yoon Kim)
-|Model   |  MR | SST1|SST2 |
-|:----:|:----:|:----:|:----:|
-| CNN-rand |73.1 |45.0|82.7|
-|CNN-static|81.0| 45.5|86.8|
-|CNN-non-static|81.5|48.0|87.2|
-|CNN-multichannel|81.1|47.4|88.1|
-
 For the implementation of these, I took the Movies Review dataset (MR) and tried to obtain the results. MR datset is used to for all the models so that we can compare them.
 My Results:
 |Parameter   |  Value | 
@@ -116,7 +107,10 @@ These values may change and hence the accuracies may change accordingly.
  CNN-static | 43.66 | 
  CNN-trainable | 50.05 | 
  CNN-binary-trainable | 49.48 |
+ Logistic Regression | 54.3 |
+ Naive Bayes | 48 |
   
+ Yoon Kim accuracies are higher as compared to above as the number of epochs and other parameters used may differ.
  This was the basic implementation and results for Text Classification using CNN.
 
 ### NNI — An AutoML Toolkit
@@ -171,7 +165,7 @@ This was implemented for the MR dataset.
 AutoKeras describes the best model architecture and we can check this by summary().
 
 ### Conclusion
-This study's main focus remained on Text Classification and its various methods. We approached Convolutional Neural Network and defined its architecture starting from the basic models like Logistic Regression and Naive Bayes. The accuracy shows that the best model is CNN. This was further extended to nni where we define a search space instead of manually changing the parameters and getting the best accuracy. The final library was the AutoKeras which automatically determines the best model.
+This study's main focus remained on Text Classification and its various methods. We approached Convolutional Neural Network and defined its architecture starting from the basic models like Logistic Regression and Naive Bayes. The accuracy shown by nni and autokeras suggests that the best model is CNN. This was further extended to nni where we define a search space instead of manually changing the parameters and getting the best accuracy. The final library was the AutoKeras which automatically determines the best model.
 
 ### References
 
