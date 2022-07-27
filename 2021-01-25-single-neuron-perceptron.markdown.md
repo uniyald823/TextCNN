@@ -140,8 +140,8 @@ The folder contains the following files:
     
  
 The code runs on the localhost and we can check the values from there. An image of the web interface is shown below.
-<center><img src='Screenshot (77).png' width="600" height="400"></center>
-<center><img src='Screenshot (78).png' width="600" height="400"></center>
+<center><img src='Screenshot (77).png' width="600" height="600"></center>
+<center><img src='Screenshot (78).png' width="600" height="600"></center>
 
 **Results**
 The best results according to the search space defined came out with the following hyperparameters as:
