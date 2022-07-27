@@ -2,18 +2,19 @@
 layout: post
 read_time: true
 show_date: true
-title:  Single Neuron Perceptron
-date:   2021-01-25 13:32:20 -0600
-description: Single neuron perceptron that classifies elements learning quite quickly.
+title:  TextCNN
+date:   
+description: Text Classification using Convolutional Neural Networks
 img: assets/img/posts/20210125/Perceptron.jpg 
 tags: [machine learning, coding, neural networks]
-author: Armando Maynez
+author: Drishya Uniyal
 github:  amaynez/Perceptron/
 mathjax: yes
 ---
 # Contents
-1. Text Classification using different models
+1. Text Classification using CNN and other models
 2. NNI for TextCNN
+3. AutoKeras
 
 ## What is Text Classification?
 
@@ -24,6 +25,7 @@ Text Classification is one of the most valuable tasks of Natural language proces
 and more.
 
 **Text Classification** is a process that provides labels to the set of texts or words in one, zero, or predefined label format. These labels tell us about the sentiment of the text.
+<center><img src='./assets/img/posts/20210125/pre.png'></center>
 There may be different models through which we can train our machines to understand human languages. A machine can not directly understand the inputted data in the form of text; we need to transform this data and can do this in various ways:
 1. Corpus in NLP: count the occurrence of each word in the sentence and provide it for the entire text.
 2. CountVectorizer: make a vocabulary where every word has its special index number. 
@@ -52,7 +54,8 @@ As Yoon Kim gave his paper, the main focus remains on TextCNN and its variants.
 Convolutional Neural Network is just a kind of neural network that performs well in image classification and computer vision. Its convolutional layer differs from other neural networks. We will be dealing with CNN for Text Classification.
 Back in the 2014, [Yoon Kim](https://aclanthology.org/D14-1181) devised a very simple Convolutional Neural Network for Sentence Classification as a foundation for text classification and tried different variants of it to compare the performance. The main model focussed in this article will revolve around this architecture given by Yoon Kim.
 
-<center><img src='download.png'></center>
+![Image](image.png)
+<center><img src='./assets/img/posts/20210125/Perceptron.png'></center>
 
 The image above shows the CNN structure used by Yoon Kim, which is the basic CNN structure used for text classification. We consider text data as sequential data like data in time series, a one-dimensional matrix. We need to work with a one-dimensional convolution layer. The model idea is almost the same, but the data type and dimension of convolution layers changed. To work with TextCNN, we require a word embedding layer and a one-dimensional convolutional network. 
 
@@ -69,7 +72,6 @@ Lastly, the fully connected layers and the output activation function will give 
 ##### The Code:
 **Dataset Used.**
 The dataset used to test the models is Movie Review Dataset. (MR Dataset). In this dataset, the phrases are given and their corresponding sentiments.
-<center><img src='data.PNG'></center>
 **Yoon Kim code implementations and results:**
 The architecture Kim uses is:
 1. Sentences are represented as vectors of words.
@@ -82,86 +84,68 @@ Approaches for creating these word vectors:
 4. CNN-multichannel: Two sets of word vectors are used. Fine-tuning is done.
 Convolutions are performed on these 2D representations with different window sizes (3, 4, and 5) are performed on the representations directly and then max pooled. Then the final predictions are made!
 
-The accuracies for some of the datasets are are shown
- Model & MR & SST1 &SST2 \\
- CNN-rand & 73.1 & 45.0 & 82.7\\ 
- CNN-static & 81.0 & 45.5 & 86.8\\ 
- CNN-non-static & 81.5 & 48.0 & 87.2 \\ 
- CNN-multichannel & 81.1 & 47.4 & 88.1\\ 
+The accuracies for some of the datasets are are shown (as obtained by Yoon Kim)
+|Model   |  MR | SST1|SST2 |
+|:----:|:----:|:----:|:----:|
+| CNN-rand |73.1 |45.0|82.7|
+|CNN-static|81.0| 45.5|86.8|
+|CNN-non-static|81.5|48.0|87.2|
+|CNN-multichannel|81.1|47.4|88.1|
 
-For instance a perceptron could get 3 different inputs as in the image, lets pretend that the inputs it receives as signal are: $x_1 = 1, \; x_2 = 2\; and \; x_3 = 3$, if it's weights are $w_1 = 0.5,\; w_2 = 1\; and \; w_3 = -1$ respectively, then what the perceptron will do when the signal is received is to multiply each input value by its corresponding weight, then add them up.
+For the implementation of these, I took the Movies Review dataset (MR) and tried to obtain the results. MR datset is used to for all the models so that we can compare them.
+My Results:
+|Parameter   |  Value | 
+|:----:|:----:|
+ Kernel_Size | [3,4,5] |
+ Dropout | 0.5 | 
+ Optimizer | adam |
+ Activation | Softmax |
+ Glove Embedding | 42B.300D|
+ Epochs | 10|
+ 
+These values may change and hence the accuracies may change accordingly.
+|Model   |  Accuracy | 
+|:----:|:----:|
+ CNN-rand | 37.27|
+ CNN-static | 43.66 | 
+ CNN-trainable | 50.05 | 
+ CNN-binary-trainable | 49.48 |
+  
+ This was the basic implementation and results for Text Classification using CNN.
 
-<p style="text-align:center">\(<br>
-\begin{align}
-\begin{split}
-\left(x_1 * w_1\right) + \left(x_2 * w_2\right) + \left(x_3 * w_3\right)
-\end{split}
-\end{align}
-\)</p>
+##### NNI — An AutoML Toolkit
+AutoML is “Automatic Machine Learning,” a toolkit that runs machine learning models and implements experiments automatically.
+In the context of the neural network, AutoML searches for different neural network architectures by taking into account the hyperparameters and training them to find the best fit model in a process called Neural Architecture Search.
+Neural Network Intelligence (NNI) is a python AutoML package that works on Linux and Windows. It trains neural network models and finds a tuple of hyper-parameters that yields an optimal model.
+The environment of NNI contains the main python file where the code is written and a config.yml file that connects the code. A .json file is where the search_space is defined, which contains different hyperparameters that the NNI framework uses and finds the best for the model. This can be defined inside the .yml file itself.
+NNI runs experiments many times when it is training the model. Each of those attempts at applying a new configuration is called a Trial. NNI also provides a web interface that helps users investigate their trials and explore the experiment results.
+A TextCNN model was implemented to test this framework. The dataset remained the same( MR Dataset), and then a simple CNN model was made, and different parameters were defined in the .yml file. After training, the web interface of NNI shows the result, and we can get a model with hyperparameters giving the best accuracy.
 
-<p style="text-align:center">\(<br>
-\begin{align}<br>
-\begin{split}<br>
-\left(0.5 * 1\right) + \left(1 * 2\right) + \left(-1 * 3\right) = 0.5 + 2 - 3 = -0.5
-\end{split}<br>
-\end{align}<br>
-\)</p>
-
-Typically when this value is obtained, we need to apply an "activation" function to smooth the output, but let's say that our activation function is linear, meaning that we keep the value as it is, then that's it, that is the output of the perceptron, -0.5.
-
-In a practical application, the output means something, perhaps we want our perceptron to classify a set of data and if the perceptron outputs a negative number, then we know the data is of type A, and if it is a positive number then it is of type B.
-
-Once we understand this, the magic starts to happen through a process called backpropagation, where we "educate" our tiny one neuron brain to have it learn how to do its job.
-
-<tweet>The magic starts to happen through a process called backpropagation, where we "educate" our tiny one neuron brain to have it learn how to do its job.</tweet>
-
-For this we need a set of data that it is already classified, we call this a training set. This data has inputs and their corresponding correct output. So we can tell the little brain when it misses in its prediction, and by doing so, we also adjust the weights a bit in the direction where we know the perceptron committed the mistake hoping that after many iterations like this the weights will be so that most of the predictions will be correct.
-
-After the model trains successfully we can have it classify data it has never seen before, and we have a fairly high confidence that it will do so correctly.
-
-The math behind this magical property of the perceptron is called gradient descent, and is just a bit of differential calculus that helps us convert the error the brain is having into tiny nudges of value of the weights towards their optimum. [This video series by 3 blue 1 brown explains it wonderfuly.](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
-
-My program creates a single neuron neural network tuned to guess if a point is above or below a randomly generated line and generates a visualization based on graphs to see how the neural network is learning through time.
-
-The neuron has 3 inputs and weights to calculate its output:
+**Steps to run the code**
+The folder contains the following files:
     
-    input 1 is the X coordinate of the point,
-    Input 2 is the y coordinate of the point,
-    Input 3 is the bias and it is always 1
+    main.py
+    config.yml
+    dataset
+    
+The folder contains the following files:
+    
+    redirect to the folder where the main.py and config.yml files are present.
+    nnictl create  --config config.yml
+    
+The code runs on the localhost and we can check the values from there. An image of the web interface is shown below.
 
-    Input 3 or the bias is required for lines that do not cross the origin (0,0)
+**Results**
 
-The Perceptron starts with weights all set to zero and learns by using 1,000 random points per each iteration.
+##### AutoKeras
+AutoKeras² is an open-source library that implements³ AutoML for deep learning using the Keras API. It automatically determines the best model and hyperparameters. 
+The autokeras.TextClassifier class accepts the max_trials argument to set the maximum number of different Keras Models to try. We can specify the number of trails and epochs.
+After the training process, we can use the best classifier to make predictions on the test set and evaluate performances. 
+This was implemented for the MR dataset.
+**Results**
+|Model   |  Accuracy | 
+|:----:|:----:|
+|CNN|89|
+AutoKeras describes the best model architecture and we can check this by summary().
 
-The output of the perceptron is calculated with the following activation function:
-    if x * weight_x + y weight_y + weight_bias is positive then 1 else 0
 
-The error for each point is calculated as the expected outcome of the perceptron minus the real outcome therefore there are only 3 possible error values:
-
-|Expected  |  Calculated | Error|
-|:----:|:----:|:----:|
-|1|-1|1|
-|1|1|0|
-|-1|-1|0|
-|-1|1|-1|
-
-With every point that is learned if the error is not 0 the weights are adjusted according to:
-
-    New_weight = Old_weight + error * input * learning_rate
-    for example: New_weight_x = Old_weight_x + error * x * learning rate
-
-A very useful parameter in all of neural networks is teh learning rate, which is basically a measure on how tiny our nudge to the weights is going to be. 
-
-In this particular case, I coded the learning_rate to decrease with every iteration as follows:
-
-    learning_rate = 0.01 / (iteration + 1)
-
-this is important to ensure that once the weights are nearing the optimal values the adjustment in each iteration is subsequently more subtle.
-
-<center><img src='./assets/img/posts/20210125/Learning_1000_points_per_iteration.jpg'></center>
-
-In the end, the perceptron always converges into a solution and finds with great precision the line we are looking for.
-
-Perceptrons are quite a revelation in that they can resolve equations by learning, however they are very limited. By their nature they can only resolve linear equations, so their problem space is quite narrow. 
-
-Nowadays the neural networks consist of combinations of many perceptrons, in many layers, and other types of "neurons", like convolution, recurrent, etc. increasing significantly the types of problems they solve.
