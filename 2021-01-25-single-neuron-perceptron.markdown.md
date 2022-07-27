@@ -164,8 +164,12 @@ AutoKeras describes the best model architecture and we can check this by summary
 ##### References
 
 [1] Y. Kim, “Convolutional Neural Networks for Sentence Classification,” arXiv, arXiv:1408.5882, Sep. 2014.doi: 10.48550/arXiv.1408.5882.<br>
-[2] “Papers with Code - Light-Weighted CNN for Text Classification.” https://paperswithcode.com/paper/lightweighted-cnn-for-text-classification (accessed Jun. 07, 2022).
-[3] “Papers with Code - A Practitioners’ Guide to Transfer Learning for Text Classification using Convolutional Neural Networks.” https://paperswithcode.com/ paper/a-practitioners-guide-to-transfer-learning (accessed Jun. 08, 2022).
-[4] “Papers with Code - Character-level Convolutional Networks for Text Classification.”https://paperswithcode.com/paper/character-level-convolutional-networks-for (accessed Jun. 08, 2022).  
-[5] DARTS: Differentiable Architecture Search,Hanxiao Liu, Karen Simonyan, Yiming Yang, https://doi.org/10.48550/arXiv
-[6] An Introduction to Neural Architecture Search for Convolutional Networks, George Kyriakides, Konstantinos Margaritis arXiv:2005.11074 [cs.LG]
+[2] “Papers with Code - Light-Weighted CNN for Text Classification.” https://paperswithcode.com/paper/lightweighted-cnn-for-text-classification (accessed Jun. 07, 2022). <br>
+[3] “Papers with Code - A Practitioners’ Guide to Transfer Learning for Text Classification using Convolutional Neural Networks.” https://paperswithcode.com/ paper/a-practitioners-guide-to-transfer-learning (accessed Jun. 08, 2022).<br>
+[4] “Papers with Code - Character-level Convolutional Networks for Text Classification.”https://paperswithcode.com/paper/character-level-convolutional-networks-for (accessed Jun. 08, 2022). <br>
+[5] DARTS: Differentiable Architecture Search,Hanxiao Liu, Karen Simonyan, Yiming Yang, https://doi.org/10.48550/arXiv <br>
+[6] An Introduction to Neural Architecture Search for Convolutional Networks, George Kyriakides, Konstantinos Margaritis arXiv:2005.11074 [cs.LG] <br>
+[7] Machine Learning, NLP: Text Classification using scikit-learn, python and NLTK.https://towardsdatascience.com/machine-learning-nlp-text-classification-using-scikit-learn-python-and-nltk-c52b92a7c73a <br>
+[8] Understanding text classification in NLP with Movie Review Example Example https://www.analyticsvidhya.com/blog/2020/12/understanding-text-classification-in-nlp-with-movie-review-example-example/ <br>
+[9] Microsoft NNI https://github.com/microsoft/nni/blob/master/examples/tutorials/hpo_nnictl/model.py <br>
+[10] CNN for Sentence Classification by Yoon Kim https://www.kaggle.com/code/hamishdickson/cnn-for-sentence-classification-by-yoon-kim/notebook
