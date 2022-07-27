@@ -73,7 +73,6 @@ Lastly, the fully connected layers and the output activation function will give 
 The dataset used to test the models is Movie Review Dataset. (MR Dataset). In this dataset, the phrases are given and their corresponding sentiments.
 <center><img src='data.PNG'></center>
 **Yoon Kim code implementations and results:**
-
 The architecture Kim uses is:
 1. Sentences are represented as vectors of words.
 2. These words are converted into (300D) vectors giving us a 2D representation for each sentence.
@@ -125,8 +124,8 @@ A TextCNN model was implemented to test this framework. The dataset remained the
 **Steps to run the code**
 The folder contains the following files:
     
-    main.py
-    config.yml
+    main.py (code written here)
+    config.yml (search space and other details defined here)
     dataset
     
 The folder contains the following files:
@@ -137,7 +136,19 @@ The folder contains the following files:
 The code runs on the localhost and we can check the values from there. An image of the web interface is shown below.
 
 **Results**
+The best results according to the search space defined came out with the following hyperparameters as:
 
+|Parameter   |  Value | 
+|:----:|:----:|
+ Batch Size | 100 |
+ Dropout | 0.78 | 
+ Learning Rate | 0.00025|
+ Epochs |7 |
+ Accuracy|59.5|
+
+This search space can take up different values and accordingly the accuracy changes.
+As the model architecture remained same till now, this is the best accuracy obtained.
+ 
 ##### AutoKeras
 AutoKeras² is an open-source library that implements³ AutoML for deep learning using the Keras API. It automatically determines the best model and hyperparameters. 
 The autokeras.TextClassifier class accepts the max_trials argument to set the maximum number of different Keras Models to try. We can specify the number of trails and epochs.
@@ -147,6 +158,6 @@ This was implemented for the MR dataset.
 |Model   |  Accuracy | 
 |:----:|:----:|
 |CNN|89|
-AutoKeras describes the best model architecture and we can check this by summary().
 
+AutoKeras describes the best model architecture and we can check this by summary().
 
