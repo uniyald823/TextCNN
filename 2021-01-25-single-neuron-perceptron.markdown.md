@@ -54,7 +54,7 @@ As Yoon Kim gave his paper, the main focus remains on TextCNN and its variants.
 Convolutional Neural Network is just a kind of neural network that performs well in image classification and computer vision. Its convolutional layer differs from other neural networks. We will be dealing with CNN for Text Classification.
 Back in the 2014, [Yoon Kim](https://aclanthology.org/D14-1181) devised a very simple Convolutional Neural Network for Sentence Classification as a foundation for text classification and tried different variants of it to compare the performance. The main model focussed in this article will revolve around this architecture given by Yoon Kim.
 
-<center><img src='download.png'></center>
+<center><img src='download.png' width="400" height="600"></center>
 
 The image above shows the CNN structure used by Yoon Kim, which is the basic CNN structure used for text classification. We consider text data as sequential data like data in time series, a one-dimensional matrix. We need to work with a one-dimensional convolution layer. The model idea is almost the same, but the data type and dimension of convolution layers changed. To work with TextCNN, we require a word embedding layer and a one-dimensional convolutional network. 
 
