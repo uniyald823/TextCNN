@@ -161,3 +161,17 @@ This was implemented for the MR dataset.
 
 AutoKeras describes the best model architecture and we can check this by summary().
 
+##### References
+
+[1] Y. Kim, “Convolutional Neural Networks for Sentence Classification,” arXiv, arXiv:1408.5882, Sep. 2014.
+doi: 10.48550/arXiv.1408.5882.
+[2] “Papers with Code - Light-Weighted CNN for Text Classification.” https://paperswithcode.com/paper/light-
+weighted-cnn-for-text-classification (accessed Jun. 07, 2022).
+[3] “Papers with Code - A Practitioners’ Guide to Transfer Learning for Text Classification using Convo-
+lutional Neural Networks.” https://paperswithcode.com/ paper/a-practitioners-guide-to-transfer-learning (ac-
+cessed Jun. 08, 2022).
+[4] “Papers with Code - Character-level Convolutional Networks for Text Classification.”
+https://paperswithcode.com/paper/character-level-convolutional-networks-for (accessed Jun. 08, 2022).
+[5] DARTS: Differentiable Architecture Search,Hanxiao Liu, Karen Simonyan, Yiming Yang, https://doi.org/10.48550/arXiv
+[6] An Introduction to Neural Architecture Search for Convolutional Networks, George Kyriakides, Konstanti-
+nos Margaritis arXiv:2005.11074 [cs.LG]
