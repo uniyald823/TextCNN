@@ -25,7 +25,7 @@ Text Classification is one of the most valuable tasks of Natural language proces
 and more.
 
 **Text Classification** is a process that provides labels to the set of texts or words in one, zero, or predefined label format. These labels tell us about the sentiment of the text.
-<center><img src='./assets/img/posts/20210125/pre.png'></center>
+<center><img src='./assets/img/posts/20210125/pre.PNG'></center>
 There may be different models through which we can train our machines to understand human languages. A machine can not directly understand the inputted data in the form of text; we need to transform this data and can do this in various ways:
 1. Corpus in NLP: count the occurrence of each word in the sentence and provide it for the entire text.
 2. CountVectorizer: make a vocabulary where every word has its special index number. 
@@ -54,8 +54,7 @@ As Yoon Kim gave his paper, the main focus remains on TextCNN and its variants.
 Convolutional Neural Network is just a kind of neural network that performs well in image classification and computer vision. Its convolutional layer differs from other neural networks. We will be dealing with CNN for Text Classification.
 Back in the 2014, [Yoon Kim](https://aclanthology.org/D14-1181) devised a very simple Convolutional Neural Network for Sentence Classification as a foundation for text classification and tried different variants of it to compare the performance. The main model focussed in this article will revolve around this architecture given by Yoon Kim.
 
-![Image](image.png)
-<center><img src='./assets/img/posts/20210125/Perceptron.png'></center>
+<center><img src='./assets/img/posts/20210125/download.png'></center>
 
 The image above shows the CNN structure used by Yoon Kim, which is the basic CNN structure used for text classification. We consider text data as sequential data like data in time series, a one-dimensional matrix. We need to work with a one-dimensional convolution layer. The model idea is almost the same, but the data type and dimension of convolution layers changed. To work with TextCNN, we require a word embedding layer and a one-dimensional convolutional network. 
 
@@ -72,7 +71,9 @@ Lastly, the fully connected layers and the output activation function will give 
 ##### The Code:
 **Dataset Used.**
 The dataset used to test the models is Movie Review Dataset. (MR Dataset). In this dataset, the phrases are given and their corresponding sentiments.
+<center><img src='./assets/img/posts/20210125/data.PNG'></center>
 **Yoon Kim code implementations and results:**
+
 The architecture Kim uses is:
 1. Sentences are represented as vectors of words.
 2. These words are converted into (300D) vectors giving us a 2D representation for each sentence.
