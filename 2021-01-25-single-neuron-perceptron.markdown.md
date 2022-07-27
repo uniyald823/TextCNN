@@ -25,7 +25,7 @@ Text Classification is one of the most valuable tasks of Natural language proces
 and more.
 
 **Text Classification** is a process that provides labels to the set of texts or words in one, zero, or predefined label format. These labels tell us about the sentiment of the text.
-<center><img src='pre.PNG'></center>
+<center><img src='pre.PNG' width="100" height="200"></center>
 There may be different models through which we can train our machines to understand human languages. A machine can not directly understand the inputted data in the form of text; we need to transform this data and can do this in various ways:
 1. Corpus in NLP: count the occurrence of each word in the sentence and provide it for the entire text.
 2. CountVectorizer: make a vocabulary where every word has its special index number. 
