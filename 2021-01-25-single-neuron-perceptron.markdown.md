@@ -74,6 +74,7 @@ We use a predefined word embedding available from the library for better perform
 When we do dot product of vectors representing text, which turns zero if they belong to the same class, but if we do dot products of embedded words, we can find interrelation of words for a specific class. The kernel(filter layer) is passed over these embeddings to find convolutions, and the Max Pooling Layer of CNN dimensionally reduces these.
 Lastly, the fully connected layers and the output activation function will give values for each class.
 ### The Code:
+(code can be found at )
 **Dataset Used.**
 The dataset used to test the models is Movie Review Dataset. (MR Dataset). In this dataset, the phrases are given and their corresponding sentiments.
 <center><img src='data.PNG'></center>
